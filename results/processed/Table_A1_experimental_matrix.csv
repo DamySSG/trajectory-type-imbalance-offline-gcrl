@@ -1,0 +1,61 @@
+environment,Imbalance_Axis,subtype,method_label,available_ratios,n_ratios
+FetchPush,Axis B (Behavior),bias-left,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis B (Behavior),bias-left,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis B (Behavior),bias-left,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis B (Behavior),bias-left,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis B (Behavior),bias-right,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis B (Behavior),bias-right,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis B (Behavior),bias-right,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis B (Behavior),bias-right,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis C (Coverage),coverage-inner,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis C (Coverage),coverage-inner,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis C (Coverage),coverage-inner,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis C (Coverage),coverage-inner,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis C (Coverage),coverage-outer,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis C (Coverage),coverage-outer,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis C (Coverage),coverage-outer,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis C (Coverage),coverage-outer,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis R (Reachability),reachability-long,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis R (Reachability),reachability-long,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis R (Reachability),reachability-long,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis R (Reachability),reachability-long,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis R (Reachability),reachability-short,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis R (Reachability),reachability-short,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis R (Reachability),reachability-short,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+FetchPush,Axis R (Reachability),reachability-short,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis B (Behavior),bias-left,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis B (Behavior),bias-left,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis B (Behavior),bias-left,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis B (Behavior),bias-left,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis B (Behavior),bias-right,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis B (Behavior),bias-right,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis B (Behavior),bias-right,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis B (Behavior),bias-right,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-bl,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-bl,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-bl,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-bl,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-br,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-br,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-br,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-br,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-center,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-center,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-center,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-center,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-tl,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-tl,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-tl,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-tl,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-tr,GCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-tr,GoFAR,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-tr,HER+DDPG,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis C (Coverage),coverage-tr,WGCSL,"0, 0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",9
+PointMaze,Axis R (Reachability),reachability-long,GCSL,"0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",8
+PointMaze,Axis R (Reachability),reachability-long,GoFAR,"0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",8
+PointMaze,Axis R (Reachability),reachability-long,HER+DDPG,"0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",8
+PointMaze,Axis R (Reachability),reachability-long,WGCSL,"0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",8
+PointMaze,Axis R (Reachability),reachability-short,GCSL,"0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",8
+PointMaze,Axis R (Reachability),reachability-short,GoFAR,"0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",8
+PointMaze,Axis R (Reachability),reachability-short,HER+DDPG,"0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",8
+PointMaze,Axis R (Reachability),reachability-short,WGCSL,"0.1, 0.2, 0.5, 0.8, 1, 2, 5, 10",8
