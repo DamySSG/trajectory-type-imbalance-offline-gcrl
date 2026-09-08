@@ -3,9 +3,7 @@ import numpy as np
 
 def behavior_masks(achieved_goals, eps=1e-3):
     """Classify left/right motion using net horizontal displacement."""
-    horizontal_displacement = (
-        achieved_goals[:, -1, 0] - achieved_goals[:, 0, 0]
-    )
+    horizontal_displacement = achieved_goals[:, -1, 0] - achieved_goals[:, 0, 0]
     left = horizontal_displacement < -eps
     right = horizontal_displacement > eps
     return {

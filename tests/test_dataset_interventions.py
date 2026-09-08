@@ -1,19 +1,31 @@
-from collections import Counter
 import unittest
+from collections import Counter
 
 import numpy as np
 
 from scripts.data.fetchpush import (
     behavior_masks as fetchpush_behavior_masks,
+)
+from scripts.data.fetchpush import (
     coverage_masks as fetchpush_coverage_masks,
+)
+from scripts.data.fetchpush import (
     initial_geometry,
+)
+from scripts.data.fetchpush import (
     reachability_masks as fetchpush_reachability_masks,
 )
 from scripts.data.interventions import intervene
 from scripts.data.pointmaze import (
     behavior_masks as pointmaze_behavior_masks,
+)
+from scripts.data.pointmaze import (
     coverage_masks as pointmaze_coverage_masks,
+)
+from scripts.data.pointmaze import (
     path_lengths,
+)
+from scripts.data.pointmaze import (
     reachability_masks as pointmaze_reachability_masks,
 )
 
@@ -23,9 +35,7 @@ def make_buffer(episodes=10, horizon=3):
     observations = np.repeat(episode_ids[:, None, None], horizon + 1, axis=1)
     actions = np.repeat(episode_ids[:, None, None], horizon, axis=1)
     goals = np.repeat(episode_ids[:, None, None], horizon, axis=1)
-    achieved_goals = np.repeat(
-        episode_ids[:, None, None], horizon + 1, axis=1
-    )
+    achieved_goals = np.repeat(episode_ids[:, None, None], horizon + 1, axis=1)
     return {
         "o": observations,
         "u": actions,
@@ -73,9 +83,10 @@ class InterventionTests(unittest.TestCase):
         counts = Counter(episode_ids(result))
         self.assertEqual(report["target_after"], 2)
         self.assertEqual(sum(counts[index] for index in range(4)), 2)
-        self.assertEqual({index: counts[index] for index in range(4, 10)}, {
-            index: 1 for index in range(4, 10)
-        })
+        self.assertEqual(
+            {index: counts[index] for index in range(4, 10)},
+            {index: 1 for index in range(4, 10)},
+        )
         self.assertTrue(all(counts[index] <= 1 for index in range(4)))
 
     def test_zero_ratio_removes_only_the_target_subset(self):
@@ -103,9 +114,10 @@ class InterventionTests(unittest.TestCase):
         self.assertEqual(report["target_after"], 8)
         self.assertEqual(len(result["o"]), 14)
         self.assertTrue(all(counts[index] >= 1 for index in range(4)))
-        self.assertEqual({index: counts[index] for index in range(4, 10)}, {
-            index: 1 for index in range(4, 10)
-        })
+        self.assertEqual(
+            {index: counts[index] for index in range(4, 10)},
+            {index: 1 for index in range(4, 10)},
+        )
 
     def test_intervention_is_deterministic_for_a_fixed_seed(self):
         first, _ = intervene(
@@ -187,11 +199,13 @@ class FetchPushClassificationTests(unittest.TestCase):
 
 class PointMazeClassificationTests(unittest.TestCase):
     def test_behavior_uses_net_horizontal_displacement(self):
-        achieved_goals = np.array([
-            [[0.0, 0.0], [-1.0, 0.0]],
-            [[0.0, 0.0], [1.0, 0.0]],
-            [[0.0, 0.0], [0.0001, 0.0]],
-        ])
+        achieved_goals = np.array(
+            [
+                [[0.0, 0.0], [-1.0, 0.0]],
+                [[0.0, 0.0], [1.0, 0.0]],
+                [[0.0, 0.0], [0.0001, 0.0]],
+            ]
+        )
 
         masks = pointmaze_behavior_masks(achieved_goals, eps=1e-3)
 
@@ -200,24 +214,28 @@ class PointMazeClassificationTests(unittest.TestCase):
         np.testing.assert_array_equal(masks["neutral"], [False, False, True])
 
     def test_path_length_sums_stepwise_euclidean_motion(self):
-        achieved_goals = np.array([
-            [[0.0, 0.0], [3.0, 4.0], [3.0, 8.0]],
-            [[0.0, 0.0], [0.0, 0.0], [1.0, 0.0]],
-        ])
+        achieved_goals = np.array(
+            [
+                [[0.0, 0.0], [3.0, 4.0], [3.0, 8.0]],
+                [[0.0, 0.0], [0.0, 0.0], [1.0, 0.0]],
+            ]
+        )
         np.testing.assert_allclose(path_lengths(achieved_goals), [9.0, 1.0])
 
     def test_coverage_uses_initial_position_quartiles(self):
-        starts = np.array([
-            [-3.0, 3.0],
-            [3.0, 3.0],
-            [-3.0, -3.0],
-            [3.0, -3.0],
-            [0.0, 0.0],
-            [-1.0, 0.0],
-            [1.0, 0.0],
-            [0.0, -1.0],
-            [0.0, 1.0],
-        ])
+        starts = np.array(
+            [
+                [-3.0, 3.0],
+                [3.0, 3.0],
+                [-3.0, -3.0],
+                [3.0, -3.0],
+                [0.0, 0.0],
+                [-1.0, 0.0],
+                [1.0, 0.0],
+                [0.0, -1.0],
+                [0.0, 1.0],
+            ]
+        )
         achieved_goals = np.repeat(starts[:, None, :], 2, axis=1)
 
         masks, metadata = pointmaze_coverage_masks(achieved_goals)
@@ -230,11 +248,13 @@ class PointMazeClassificationTests(unittest.TestCase):
         self.assertEqual(int(masks["center"].sum()), 5)
 
     def test_reachability_uses_path_length_tertiles(self):
-        achieved_goals = np.array([
-            [[0.0, 0.0], [1.0, 0.0]],
-            [[0.0, 0.0], [2.0, 0.0]],
-            [[0.0, 0.0], [3.0, 0.0]],
-        ])
+        achieved_goals = np.array(
+            [
+                [[0.0, 0.0], [1.0, 0.0]],
+                [[0.0, 0.0], [2.0, 0.0]],
+                [[0.0, 0.0], [3.0, 0.0]],
+            ]
+        )
 
         masks, metadata = pointmaze_reachability_masks(achieved_goals)
 

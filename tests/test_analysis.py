@@ -1,11 +1,10 @@
-from pathlib import Path
 import tempfile
 import unittest
+from pathlib import Path
 
 import pandas as pd
 
 from analysis.generate_appendix_figures import build_analysis
-
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results" / "processed" / "Table_A0_cleaned_raw_results.csv"

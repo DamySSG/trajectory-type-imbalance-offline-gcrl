@@ -1,35 +1,29 @@
-import gym 
-import numpy as np
-import pickle 
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.utils.data
-from torch import autograd
-from tqdm import tqdm 
+from torch import autograd, nn
+
 
 # https://github.com/ikostrikov/pytorch-a2c-ppo-acktr-gail/blob/master/a2c_ppo_acktr/algo/gail.py
 class Discriminator(nn.Module):
     def __init__(self, input_dim, hidden_dim=256, lr=5e-4):
-        super(Discriminator, self).__init__()
-
+        super().__init__()
 
         self.trunk = nn.Sequential(
-            nn.Linear(input_dim, hidden_dim), nn.Tanh(),
-            nn.Linear(hidden_dim, hidden_dim), nn.Tanh(),
-            nn.Linear(hidden_dim, hidden_dim), nn.Tanh(),
-            nn.Linear(hidden_dim, 1))
+            nn.Linear(input_dim, hidden_dim),
+            nn.Tanh(),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.Tanh(),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.Tanh(),
+            nn.Linear(hidden_dim, 1),
+        )
 
         self.trunk.train()
 
         self.optimizer = torch.optim.Adam(self.trunk.parameters(), lr=5e-4)
 
-    def compute_grad_pen(self,
-                         expert_state,
-                         offline_state,
-                         lambda_=20.):
+    def compute_grad_pen(self, expert_state, offline_state, lambda_=20.0):
         alpha = torch.rand(expert_state.size(0), 1)
-        expert_data = expert_state 
+        expert_data = expert_state
         offline_data = offline_state
 
         alpha = alpha.expand_as(expert_data).to(expert_data.device)
@@ -45,7 +39,8 @@ class Discriminator(nn.Module):
             grad_outputs=ones,
             create_graph=True,
             retain_graph=True,
-            only_inputs=True)[0]
+            only_inputs=True,
+        )[0]
 
         grad_pen = lambda_ * (grad.norm(2, dim=1) - 1).pow(2).mean()
         return grad_pen
@@ -56,4 +51,4 @@ class Discriminator(nn.Module):
             d = self.trunk(state)
             s = torch.sigmoid(d)
             reward = s.log() - (1 - s).log()
-            return reward 
+            return reward

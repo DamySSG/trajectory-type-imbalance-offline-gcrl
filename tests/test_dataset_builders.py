@@ -1,33 +1,39 @@
 import csv
-from pathlib import Path
 import pickle
 import tempfile
 import unittest
+from pathlib import Path
 
 import numpy as np
 
 from scripts.data.make_fetchpush_imbalances import (
     DEFAULT_RATIOS as FETCHPUSH_RATIOS,
+)
+from scripts.data.make_fetchpush_imbalances import (
     build_variants as build_fetchpush,
 )
 from scripts.data.make_pointmaze_imbalances import (
     DEFAULT_RATIOS as POINTMAZE_RATIOS,
+)
+from scripts.data.make_pointmaze_imbalances import (
     build_variants as build_pointmaze,
 )
 from scripts.data.validate_variants import validate_manifest
 
 
 def fetchpush_buffer():
-    goals = np.array([
-        [0.5, 0.5],
-        [0.5, -0.5],
-        [2.0, 0.5],
-        [2.0, -0.5],
-        [0.2, 0.2],
-        [0.2, -0.2],
-        [3.0, 0.5],
-        [3.0, -0.5],
-    ])
+    goals = np.array(
+        [
+            [0.5, 0.5],
+            [0.5, -0.5],
+            [2.0, 0.5],
+            [2.0, -0.5],
+            [0.2, 0.2],
+            [0.2, -0.2],
+            [3.0, 0.5],
+            [3.0, -0.5],
+        ]
+    )
     count = len(goals)
     observations = np.zeros((count, 3, 6))
     achieved_goals = np.zeros((count, 3, 3))
@@ -43,17 +49,19 @@ def fetchpush_buffer():
 
 
 def pointmaze_buffer():
-    starts = np.array([
-        [-3.0, 3.0],
-        [3.0, 3.0],
-        [-3.0, -3.0],
-        [3.0, -3.0],
-        [0.0, 0.0],
-        [-1.0, 0.0],
-        [1.0, 0.0],
-        [0.0, -1.0],
-        [0.0, 1.0],
-    ])
+    starts = np.array(
+        [
+            [-3.0, 3.0],
+            [3.0, 3.0],
+            [-3.0, -3.0],
+            [3.0, -3.0],
+            [0.0, 0.0],
+            [-1.0, 0.0],
+            [1.0, 0.0],
+            [0.0, -1.0],
+            [0.0, 1.0],
+        ]
+    )
     horizontal_motion = np.array([-3.0, 3.0, -2.0, 2.0, -1.0, 1.0, -0.5, 0.5, 0.0])
     achieved_goals = np.repeat(starts[:, None, :], 3, axis=1)
     achieved_goals[:, 1, 0] += horizontal_motion * 0.25
@@ -98,10 +106,14 @@ class DatasetBuilderTests(unittest.TestCase):
 
             self.assertEqual(len(manifest), 9)
             self.assertEqual(len(list(Path(directory).rglob("*.pkl"))), 9)
-            with Path(directory, "manifest.csv").open(newline="", encoding="utf-8") as handle:
+            with Path(directory, "manifest.csv").open(
+                newline="", encoding="utf-8"
+            ) as handle:
                 rows = list(csv.DictReader(handle))
             self.assertEqual(len(rows), 9)
-            self.assertTrue(all(row["target_after"] == row["target_before"] for row in rows))
+            self.assertTrue(
+                all(row["target_after"] == row["target_before"] for row in rows)
+            )
 
     def test_pointmaze_builder_supports_complete_subtype_removal(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -129,9 +141,7 @@ class DatasetBuilderTests(unittest.TestCase):
     def test_manifest_validator_reports_a_missing_variant(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            manifest = build_fetchpush(
-                fetchpush_buffer(), root, ratios=[1.0], seed=0
-            )
+            manifest = build_fetchpush(fetchpush_buffer(), root, ratios=[1.0], seed=0)
             root.joinpath(manifest[0]["path"]).unlink()
 
             report = validate_manifest(root)

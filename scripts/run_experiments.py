@@ -1,10 +1,9 @@
 import argparse
-from dataclasses import dataclass
 import json
-from pathlib import Path
 import shlex
 import subprocess
-
+from dataclasses import dataclass
+from pathlib import Path
 
 METHODS = ("ddpg", "gcsl", "wgcsl", "gofar")
 RATIOS = (0.0, 0.1, 0.2, 0.5, 0.8, 1.0, 2.0, 5.0, 10.0)
@@ -78,7 +77,9 @@ def _buffer_path(run, source):
         "FetchPush": "fetchpush",
         "PointMaze": "pointmaze",
     }[run.environment]
-    return run.data_root / environment_dir / source / run.dimension / _buffer_filename(run)
+    return (
+        run.data_root / environment_dir / source / run.dimension / _buffer_filename(run)
+    )
 
 
 def command_for(run, python_executable="python"):

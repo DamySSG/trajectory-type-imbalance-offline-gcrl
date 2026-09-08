@@ -2,7 +2,6 @@ import math
 
 import numpy as np
 
-
 REQUIRED_KEYS = ("o", "u", "g", "ag")
 
 
@@ -21,7 +20,9 @@ def _select_episodes(buffer, indices, episode_count):
     selected = {}
     for key, value in buffer.items():
         array = np.asarray(value)
-        selected[key] = array[indices].copy() if array.shape[0] == episode_count else value
+        selected[key] = (
+            array[indices].copy() if array.shape[0] == episode_count else value
+        )
     return selected
 
 
@@ -76,9 +77,7 @@ def intervene(
             )
 
     if requested < len(target_indices):
-        selected_targets = rng.choice(
-            target_indices, size=requested, replace=False
-        )
+        selected_targets = rng.choice(target_indices, size=requested, replace=False)
     elif requested == len(target_indices):
         selected_targets = target_indices.copy()
     elif upsampling == "append":
@@ -89,9 +88,7 @@ def intervene(
         )
         selected_targets = np.concatenate([target_indices, extra])
     elif upsampling == "resample":
-        selected_targets = rng.choice(
-            target_indices, size=requested, replace=True
-        )
+        selected_targets = rng.choice(target_indices, size=requested, replace=True)
     else:
         raise ValueError("upsampling must be 'append' or 'resample'")
 

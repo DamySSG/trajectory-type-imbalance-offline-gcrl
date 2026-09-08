@@ -1,6 +1,8 @@
 import threading
+
 import numpy as np
 from mpi4py import MPI
+
 
 class normalizer:
     def __init__(self, size, eps=1e-2, default_clip_range=np.inf):
@@ -20,7 +22,7 @@ class normalizer:
         self.std = np.ones(self.size, np.float32)
         # thread locker
         self.lock = threading.Lock()
-    
+
     # update the parameters of the normalizer
     def update(self, v):
         v = v.reshape(-1, self.size)
@@ -47,15 +49,23 @@ class normalizer:
             self.local_sum[...] = 0
             self.local_sumsq[...] = 0
         # synrc the stats
-        sync_sum, sync_sumsq, sync_count = self.sync(local_sum, local_sumsq, local_count)
+        sync_sum, sync_sumsq, sync_count = self.sync(
+            local_sum, local_sumsq, local_count
+        )
         # update the total stuff
         self.total_sum += sync_sum
         self.total_sumsq += sync_sumsq
         self.total_count += sync_count
         # calculate the new mean and std
         self.mean = self.total_sum / self.total_count
-        self.std = np.sqrt(np.maximum(np.square(self.eps), (self.total_sumsq / self.total_count) - np.square(self.total_sum / self.total_count)))
-    
+        self.std = np.sqrt(
+            np.maximum(
+                np.square(self.eps),
+                (self.total_sumsq / self.total_count)
+                - np.square(self.total_sum / self.total_count),
+            )
+        )
+
     # average across the cpu's data
     def _mpi_average(self, x):
         buf = np.zeros_like(x)

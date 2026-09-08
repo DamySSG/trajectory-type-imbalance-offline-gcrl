@@ -7,7 +7,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
 
-
 RATIO_ORDER = (0.0, 0.1, 0.2, 0.5, 0.8, 1.0, 2.0, 5.0, 10.0)
 METRICS = (
     "success_rate",
@@ -42,7 +41,9 @@ def _write_tables(data, table_dir):
     data.to_csv(table_dir / "Table_A0_cleaned_raw_results.csv", index=False)
     baseline = (
         data[data["Ratio"] == 1.0]
-        .groupby(["environment", "method", "method_label"], as_index=False)[list(METRICS)]
+        .groupby(["environment", "method", "method_label"], as_index=False)[
+            list(METRICS)
+        ]
         .mean()
         .rename(columns={metric: f"{metric}_baseline_r1_mean" for metric in METRICS})
     )
@@ -140,9 +141,7 @@ def _write_figures(merged, figure_dir, table_dir):
                     axes.set_xticks(range(len(RATIO_ORDER)), tick_labels)
                     axes.set_xlabel("Trajectory-count multiplier r")
                     axes.set_ylabel(METRIC_LABELS[metric])
-                    axes.set_title(
-                        f"{environment} | {AXIS_LABELS[axis]} | {method}"
-                    )
+                    axes.set_title(f"{environment} | {AXIS_LABELS[axis]} | {method}")
                     axes.grid(True, linewidth=0.5, alpha=0.4)
                     axes.legend(fontsize=8)
                     figure.tight_layout()

@@ -1,7 +1,6 @@
 import ast
-from pathlib import Path
 import unittest
-
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TRAIN_SOURCE = ROOT.joinpath("train.py").read_text(encoding="utf-8")

@@ -1,0 +1,19 @@
+name: trajectory-imbalance
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8.19
+  - openmpi=4.1.6
+  - pip=24.0
+  - pip:
+      - gymnasium==0.29.1
+      - gymnasium-robotics==1.2.4
+      - matplotlib==3.7.5
+      - mpi4py==4.0.0
+      - mujoco==2.3.7
+      - numpy==1.24.4
+      - pandas==2.0.3
+      - PyYAML==6.0.1
+      - torch==2.4.0
+      - tqdm==4.66.4
+      - wandb==0.17.5

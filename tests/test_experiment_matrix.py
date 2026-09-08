@@ -1,6 +1,6 @@
+import unittest
 from collections import Counter
 from pathlib import Path
-import unittest
 
 from scripts.run_experiments import build_matrix, command_for
 

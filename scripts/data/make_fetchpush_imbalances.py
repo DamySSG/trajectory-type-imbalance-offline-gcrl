@@ -1,7 +1,7 @@
 import argparse
 import csv
-from pathlib import Path
 import pickle
+from pathlib import Path
 
 import numpy as np
 
@@ -12,7 +12,6 @@ from scripts.data.fetchpush import (
     reachability_masks,
 )
 from scripts.data.interventions import intervene
-
 
 DEFAULT_RATIOS = (0.0, 0.1, 0.2, 0.5, 0.8, 1.0, 2.0, 5.0, 10.0)
 MANIFEST_FIELDS = (
@@ -66,9 +65,7 @@ def build_variants(
     output_root.mkdir(parents=True, exist_ok=True)
     gripper, object_pos, goal = initial_geometry(buffer, grip_slice)
     behavior = behavior_masks(gripper, object_pos, goal, eps=behavior_eps)
-    coverage, _ = coverage_masks(
-        gripper, object_pos, goal, quantile=coverage_quantile
-    )
+    coverage, _ = coverage_masks(gripper, object_pos, goal, quantile=coverage_quantile)
     reachability, _ = reachability_masks(
         gripper,
         object_pos,

@@ -1,11 +1,10 @@
 import argparse
 import csv
 import json
-from pathlib import Path
 import pickle
+from pathlib import Path
 
 import numpy as np
-
 
 REQUIRED_KEYS = ("o", "u", "g", "ag")
 
@@ -32,7 +31,7 @@ def validate_manifest(output_root):
         try:
             with variant_path.open("rb") as handle:
                 buffer = pickle.load(handle)
-        except Exception as error:
+        except (OSError, pickle.UnpicklingError, EOFError) as error:
             errors.append(f"line {line_number}: cannot read {row['path']}: {error}")
             continue
 

@@ -68,9 +68,7 @@ def reachability_masks(
     gripper_object_distance = np.linalg.norm(gripper_to_object, axis=1)
     object_goal_distance = np.linalg.norm(object_to_goal, axis=1)
     dot_product = np.sum(gripper_to_object * object_to_goal, axis=1)
-    cosine = dot_product / (
-        gripper_object_distance * object_goal_distance + eps
-    )
+    cosine = dot_product / (gripper_object_distance * object_goal_distance + eps)
     misalignment = 1.0 - np.clip(cosine, -1.0, 1.0)
     scores = (
         alpha * gripper_object_distance

@@ -1,13 +1,12 @@
 import argparse
 import csv
-from pathlib import Path
 import pickle
+from pathlib import Path
 
 import numpy as np
 
 from scripts.data.interventions import intervene
 from scripts.data.pointmaze import behavior_masks, coverage_masks, reachability_masks
-
 
 DEFAULT_RATIOS = (0.0, 0.1, 0.2, 0.5, 0.8, 1.0, 2.0, 5.0, 10.0)
 MANIFEST_FIELDS = (
@@ -34,7 +33,11 @@ def _select_base(buffer, episode_count, rng):
         raise ValueError("base_episodes must lie between 1 and the available count")
     indices = np.sort(rng.permutation(available)[:episode_count])
     return {
-        key: (np.asarray(value)[indices].copy() if np.asarray(value).shape[0] == available else value)
+        key: (
+            np.asarray(value)[indices].copy()
+            if np.asarray(value).shape[0] == available
+            else value
+        )
         for key, value in buffer.items()
     }
 
@@ -96,7 +99,9 @@ def build_variants(
                 min_target=0 if ratio == 0 else 1,
                 upsampling="resample",
             )
-            prefix = {"coverage": "cov", "bias": "beh", "reachability": "reach"}[dimension]
+            prefix = {"coverage": "cov", "bias": "beh", "reachability": "reach"}[
+                dimension
+            ]
             filename = f"buffer_{prefix}_{subtype}_r{ratio:g}_seed{seed}.pkl"
             relative_path = Path(dimension, filename)
             _save_buffer(variant, output_root / relative_path)

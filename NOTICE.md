@@ -15,3 +15,10 @@ documentation.
 
 The repository does not redistribute raw offline trajectory buffers, trained
 model checkpoints, or W&B run directories.
+
+The reviewer release routes the manuscript's HER+DDPG condition to
+`rl_modules/ddpg_agent.py`, the GoFAR DDPG implementation that invokes the HER
+sampler. A later local exploratory module named `ddpg_agent1.py` is excluded:
+its recorded modification timestamp postdates the FetchPush HER+DDPG runs and
+its TD3-style twin-critic objective is outside the methods reported in the
+manuscript.
