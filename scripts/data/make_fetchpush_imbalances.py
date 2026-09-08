@@ -14,7 +14,7 @@ from scripts.data.fetchpush import (
 from scripts.data.interventions import intervene
 
 
-DEFAULT_RATIOS = (0.1, 0.2, 0.5, 0.8, 1.0, 2.0, 5.0, 10.0)
+DEFAULT_RATIOS = (0.0, 0.1, 0.2, 0.5, 0.8, 1.0, 2.0, 5.0, 10.0)
 MANIFEST_FIELDS = (
     "dimension",
     "subtype",

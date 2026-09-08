@@ -28,6 +28,15 @@ class TrainingEntrypointTests(unittest.TestCase):
         self.assertNotIn("from envs import", TRAIN_SOURCE)
         self.assertNotIn("from envs.", TRAIN_SOURCE)
 
+    def test_wandb_destination_and_mode_are_configurable(self):
+        self.assertIn("--wandb-project", TRAIN_SOURCE)
+        self.assertIn("--wandb-entity", TRAIN_SOURCE)
+        self.assertIn("--wandb-mode", TRAIN_SOURCE)
+        self.assertIn("project=args.wandb_project", TRAIN_SOURCE)
+        self.assertIn("entity=args.wandb_entity", TRAIN_SOURCE)
+        self.assertIn("mode=args.wandb_mode", TRAIN_SOURCE)
+        self.assertNotIn('project="gofar-maze-false"', TRAIN_SOURCE)
+
 
 if __name__ == "__main__":
     unittest.main()

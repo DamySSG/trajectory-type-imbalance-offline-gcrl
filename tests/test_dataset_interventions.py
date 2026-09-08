@@ -78,6 +78,17 @@ class InterventionTests(unittest.TestCase):
         })
         self.assertTrue(all(counts[index] <= 1 for index in range(4)))
 
+    def test_zero_ratio_removes_only_the_target_subset(self):
+        result, report = intervene(
+            self.buffer,
+            self.target,
+            ratio=0.0,
+            rng=np.random.default_rng(19),
+        )
+
+        self.assertEqual(report["target_after"], 0)
+        self.assertEqual(Counter(episode_ids(result)), Counter(range(4, 10)))
+
     def test_append_upsampling_retains_originals_and_reaches_exact_count(self):
         result, report = intervene(
             self.buffer,

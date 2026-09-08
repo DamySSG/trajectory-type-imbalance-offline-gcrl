@@ -9,7 +9,7 @@ from scripts.data.interventions import intervene
 from scripts.data.pointmaze import behavior_masks, coverage_masks, reachability_masks
 
 
-DEFAULT_RATIOS = (0.1, 0.2, 0.5, 0.8, 1.0, 2.0, 5.0, 10.0)
+DEFAULT_RATIOS = (0.0, 0.1, 0.2, 0.5, 0.8, 1.0, 2.0, 5.0, 10.0)
 MANIFEST_FIELDS = (
     "dimension",
     "subtype",
@@ -93,7 +93,7 @@ def build_variants(
                 ratio,
                 rng,
                 rounding="round",
-                min_target=1,
+                min_target=0 if ratio == 0 else 1,
                 upsampling="resample",
             )
             prefix = {"coverage": "cov", "bias": "beh", "reachability": "reach"}[dimension]

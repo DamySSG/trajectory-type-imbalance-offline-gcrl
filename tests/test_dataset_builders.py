@@ -6,8 +6,14 @@ import unittest
 
 import numpy as np
 
-from scripts.data.make_fetchpush_imbalances import build_variants as build_fetchpush
-from scripts.data.make_pointmaze_imbalances import build_variants as build_pointmaze
+from scripts.data.make_fetchpush_imbalances import (
+    DEFAULT_RATIOS as FETCHPUSH_RATIOS,
+    build_variants as build_fetchpush,
+)
+from scripts.data.make_pointmaze_imbalances import (
+    DEFAULT_RATIOS as POINTMAZE_RATIOS,
+    build_variants as build_pointmaze,
+)
 from scripts.data.validate_variants import validate_manifest
 
 
@@ -62,6 +68,10 @@ def pointmaze_buffer():
 
 
 class DatasetBuilderTests(unittest.TestCase):
+    def test_default_ratio_grid_includes_complete_subtype_removal(self):
+        self.assertEqual(FETCHPUSH_RATIOS[0], 0.0)
+        self.assertEqual(POINTMAZE_RATIOS[0], 0.0)
+
     def test_fetchpush_builder_writes_six_ratio_one_variants_and_manifest(self):
         with tempfile.TemporaryDirectory() as directory:
             manifest = build_fetchpush(
@@ -92,6 +102,19 @@ class DatasetBuilderTests(unittest.TestCase):
                 rows = list(csv.DictReader(handle))
             self.assertEqual(len(rows), 9)
             self.assertTrue(all(row["target_after"] == row["target_before"] for row in rows))
+
+    def test_pointmaze_builder_supports_complete_subtype_removal(self):
+        with tempfile.TemporaryDirectory() as directory:
+            manifest = build_pointmaze(
+                pointmaze_buffer(),
+                Path(directory),
+                ratios=[0.0],
+                seed=0,
+                base_episodes=None,
+            )
+
+            self.assertEqual(len(manifest), 9)
+            self.assertTrue(all(row["target_after"] == 0 for row in manifest))
 
     def test_manifest_validator_checks_files_and_episode_counts(self):
         with tempfile.TemporaryDirectory() as directory:

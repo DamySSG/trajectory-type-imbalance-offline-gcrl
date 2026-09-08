@@ -158,6 +158,19 @@ def get_args():
     parser.add_argument("--imbalance-ratio", type=str, default=None,
                         help="e.g. 0.1, 2, 5 (meaning r:1)")
 
+    parser.add_argument(
+        "--wandb-project",
+        default="trajectory-type-imbalance-offline-gcrl",
+        help="W&B project name",
+    )
+    parser.add_argument("--wandb-entity", default=None, help="optional W&B entity")
+    parser.add_argument(
+        "--wandb-mode",
+        choices=["online", "offline", "disabled"],
+        default="online",
+    )
+    parser.add_argument("--wandb-group", default=None)
+
     
 
     args = parser.parse_args()
@@ -252,9 +265,11 @@ def launch(args):
 
     if MPI.COMM_WORLD.Get_rank() == 0:
         wandb.init(
-            project="gofar-maze-false",
+            project=args.wandb_project,
+            entity=args.wandb_entity,
+            mode=args.wandb_mode,
             name=run_name,
-            group=f"{args.env}/{args.imb_type}",
+            group=args.wandb_group or f"{args.env}/{args.imb_type}",
             job_type=args.method,
             tags=[
                 args.env_id,
