@@ -1,0 +1,38 @@
+# Research data and model artifacts
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.ckpt
+data/raw/
+data/generated/
+checkpoints/
+saved_models/
+
+# Experiment tracking and generated outputs
+wandb/
+logs/
+outputs/
+figures/generated/
+*.log
+*.gif
+*.mp4
+
+# Python and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
