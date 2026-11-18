@@ -1,0 +1,16 @@
+# Weighted-sampling revision evidence
+
+This release accompanies the weighted-only revision. It contains all 1,773 retained run endpoints (591 per task), 546 paired contrasts in 24 retained families, construction/exposure records, configuration summaries and available curve data. There are three paired learner/data blocks per condition. No new training occurs in preparing this release. Fixed-size resampling and construction-arm contrasts are excluded from the current manuscript; the repository root retains the earlier implementation as historical provenance.
+
+## Contents and reproduction
+
+- Extract the S1–S6 ZIP archives into one working directory. Original numeric suffixes in source filenames identify provenance; `evidence_summary.json` gives the retained counts. S2 contains 394 original-task condition trajectories, each with 3 blocks and 11 validation points.
+- `weighted_contrasts_audited.json` contains every retained contrast and its three effects, mean, SD, interval, exact p and Holm values. `holm` preserves the original whole-family correction; `holm_retained` is the explicitly recalculated retained-family value. All are 1.00. The reporting-scope change is not a new preregistration.
+- Install numpy and matplotlib, then run `python plot_weighted.py` to regenerate the revised workflow and weighted removal/reciprocal panels. `dose_source_data.csv` preserves all points for the unchanged seven-position profiles.
+- Extract `implementation_snapshot.zip` separately. It includes the available measurement/construction implementations, legacy learner modules, modern adapters, pinned third-party source copies with licenses, evaluation and statistical code. `implementation_manifest.json` gives file hashes. `revision/vendor/ADAPTATIONS.md` documents upstream commit IDs and adaptation boundaries. Dependency files are included.
+
+The implementation archive is a snapshot of the available local revision code, not an assertion that every file is byte-identical to every historical training worker. Per-run source/configuration hashes in the evidence remain the authority for those runs. Some historical orchestration scripts retain both construction arms and fixed original matrix sizes; do not use them as a launcher for this filtered reporting subset without rebuilding the appropriate manifests.
+
+Training requires the original offline buffers, the correct simulator environments and task/reset-bank artifacts. Raw buffers, model checkpoints, historical collector checkpoints, full loss histories and a complete Ant validation-curve export are not included. Host-specific provenance paths are redacted; hashes and scientific values are retained. This release supports inspection of the construction/adapters and reproduction of the reported statistical displays, not an unsupported promise of one-command retraining from the public files alone.
+
+No manuscript, referee correspondence, credentials or personal notes are included. Third-party licenses and attribution remain in the implementation archive.

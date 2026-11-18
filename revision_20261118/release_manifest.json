@@ -1,0 +1,70 @@
+{
+  "dose_source_data.csv": {
+    "bytes": 73854,
+    "sha256": "9da456e245d53acf832933ac23a7ff6825c628c5673b573b45ff16e0268fa2c2"
+  },
+  "evidence_summary.json": {
+    "bytes": 6137,
+    "sha256": "f96022e4f48f502f765868f44925d6494f32f1300c76251dc713bc70d16b2ed0"
+  },
+  "implementation_manifest.json": {
+    "bytes": 7754,
+    "sha256": "690b7dfcdf5b5e4beee305aa2a434b2754a72269dde8e937f2323265e4e262ae"
+  },
+  "implementation_snapshot.zip": {
+    "bytes": 135485,
+    "sha256": "32d449dc5f42142d962a12b80b01fc6f7fc9b1e2cca977fe83612cfc0f4deb62"
+  },
+  "plot_weighted.py": {
+    "bytes": 6551,
+    "sha256": "1685cf0af22467ff0ebea3cd470ae20ede8871e8a724691f95c981cd995eddd2"
+  },
+  "README.md": {
+    "bytes": 3043,
+    "sha256": "8e8ae805bf2b8aad5b89977c5b41537672c97ae0c853dea2137dc87ccd0710cd"
+  },
+  "S1_Complete_effects.zip": {
+    "bytes": 311178,
+    "sha256": "ff6e8153b47711bbb0640fb3c2f30ddb4c93ad6aa1712710d10750a9307ce3cc"
+  },
+  "S2_Complete_validation.zip": {
+    "bytes": 453994,
+    "sha256": "e28226c7ccad5a9416c9b1a7c79da307838f399a4b93dca046c118bdd91de9a5"
+  },
+  "S3_Construction.zip": {
+    "bytes": 133190,
+    "sha256": "cdea12192dbf75ed17862cbd27df36f84d4cc278617cc533cf3f23c5c3921eeb"
+  },
+  "S4_Baseline_sampling.zip": {
+    "bytes": 13563,
+    "sha256": "e24c3cc8999bbc1e9c0c5671fdc210037929bc11a57e9802e4055a6174d39995"
+  },
+  "S4_Configuration.zip": {
+    "bytes": 9227,
+    "sha256": "3a54f4c934b2fb2945ef64ae8187acc77b34232b030c842d69c9a6376a7b0e28"
+  },
+  "S4_Descriptor_diagnostics.zip": {
+    "bytes": 3793,
+    "sha256": "276b0c99fe32f027f1adeb10a799e27065fd4a3824aaa6693df2a0a7be6cfc9a"
+  },
+  "S4_Evaluation_banks.zip": {
+    "bytes": 188556,
+    "sha256": "d6a737a6b6d3b515db46baa16e0f8e9a272f7562b7084d81535d8ec99b21bb0f"
+  },
+  "S4_Source_pools.zip": {
+    "bytes": 933,
+    "sha256": "acb67eed7f19649bedb1c6376ee398dc3318298120844946c6dc41a4541f5404"
+  },
+  "S5_Ant_complete.zip": {
+    "bytes": 16239,
+    "sha256": "06cebfdbafcb1909572cd1c8dd3fd7f8f715ad16f423231a2b4cf8e9847d518b"
+  },
+  "S6_Ant_construction_and_full_exposure.zip": {
+    "bytes": 638729,
+    "sha256": "624899aad6585759c5963427cc76d91d5f86da84206cdf7e486e89aaeba5e25c"
+  },
+  "weighted_contrasts_audited.json": {
+    "bytes": 330041,
+    "sha256": "d71d8c8c7138fe578803b09e5e6ade36154016eae36755c10954aa54d902462d"
+  }
+}

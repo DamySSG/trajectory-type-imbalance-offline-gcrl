@@ -1,0 +1,179 @@
+{
+  "runs": 1773,
+  "original_runs": 1182,
+  "ant_runs": 591,
+  "views_original": 348,
+  "contrast_count": 546,
+  "families": {
+    "primary_FetchPush_weighted": {
+      "count": 84,
+      "min": -6.8359375,
+      "max": 13.606770833333334
+    },
+    "primary_PointMaze_weighted": {
+      "count": 84,
+      "min": -9.375,
+      "max": 12.760416666666666
+    },
+    "secondary_original_small_FetchPush": {
+      "count": 12,
+      "min": -1.1067708333333333,
+      "max": 0.7161458333333334
+    },
+    "secondary_mixture50_reference_FetchPush": {
+      "count": 12,
+      "min": -3.5807291666666665,
+      "max": 0.9765625
+    },
+    "secondary_source_only_minus_matched_FetchPush": {
+      "count": 24,
+      "min": -2.1158854166666665,
+      "max": 3.9388020833333335
+    },
+    "secondary_reciprocal_FetchPush": {
+      "count": 4,
+      "min": -1.1393229166666667,
+      "max": 1.953125
+    },
+    "secondary_removal_FetchPush": {
+      "count": 6,
+      "min": -34.798177083333336,
+      "max": -6.25
+    },
+    "secondary_mixture_interaction_FetchPush": {
+      "count": 24,
+      "min": -4.39453125,
+      "max": 3.7109375
+    },
+    "secondary_threshold_FetchPush": {
+      "count": 16,
+      "min": -2.1484375,
+      "max": 1.46484375
+    },
+    "secondary_original_small_PointMaze": {
+      "count": 12,
+      "min": -2.63671875,
+      "max": 3.3854166666666665
+    },
+    "secondary_mixture50_reference_PointMaze": {
+      "count": 12,
+      "min": -2.6041666666666665,
+      "max": 3.3528645833333335
+    },
+    "secondary_source_only_minus_matched_PointMaze": {
+      "count": 24,
+      "min": -10.188802083333334,
+      "max": 4.361979166666667
+    },
+    "secondary_reciprocal_PointMaze": {
+      "count": 4,
+      "min": -6.705729166666667,
+      "max": 4.036458333333333
+    },
+    "secondary_removal_PointMaze": {
+      "count": 6,
+      "min": -6.0546875,
+      "max": 3.0598958333333335
+    },
+    "secondary_mixture_interaction_PointMaze": {
+      "count": 24,
+      "min": -6.282552083333333,
+      "max": 5.436197916666667
+    },
+    "secondary_threshold_PointMaze": {
+      "count": 16,
+      "min": -5.013020833333333,
+      "max": 2.9947916666666665
+    },
+    "AntMazeLarge_mixture50_reference": {
+      "count": 12,
+      "min": -0.13020833333333334,
+      "max": 0.0
+    },
+    "AntMazeLarge_mixture_interaction": {
+      "count": 24,
+      "min": -0.09765625,
+      "max": 0.4557291666666667
+    },
+    "AntMazeLarge_original_small": {
+      "count": 12,
+      "min": -0.13020833333333334,
+      "max": 0.06510416666666667
+    },
+    "AntMazeLarge_primary_weighted": {
+      "count": 84,
+      "min": -4.231770833333333,
+      "max": 10.384114583333334
+    },
+    "AntMazeLarge_reciprocal": {
+      "count": 4,
+      "min": -7.2265625,
+      "max": 10.026041666666666
+    },
+    "AntMazeLarge_removal": {
+      "count": 6,
+      "min": -0.09765625,
+      "max": 0.032552083333333336
+    },
+    "AntMazeLarge_source_only_minus_matched": {
+      "count": 24,
+      "min": -6.34765625,
+      "max": 5.924479166666667
+    },
+    "AntMazeLarge_threshold": {
+      "count": 16,
+      "min": -0.16276041666666666,
+      "max": 0.1953125
+    }
+  },
+  "csv_counts": {
+    "S1_Complete_effects\\contrasts.csv": 364,
+    "S1_Complete_effects\\natural_controls_42.csv": 42,
+    "S1_Complete_effects\\runs.csv": 1182,
+    "S1_Complete_effects\\seed_effects.csv": 1092,
+    "S2_Complete_validation\\condition_summaries.csv": 4334,
+    "S2_Complete_validation\\validation_points.csv": 13002,
+    "S3_Construction\\category_counts_and_selection_mass.csv": 3132,
+    "S3_Construction\\dataset_views.csv": 348,
+    "S3_Construction\\job_to_dataset_view.csv": 1182,
+    "S4_Baseline_sampling\\normalization_support.csv": 42,
+    "S4_Baseline_sampling\\sampling_categories.csv": 864,
+    "S4_Baseline_sampling\\sampling_paths.csv": 96,
+    "S4_Configuration\\configuration_parameters.csv": 990,
+    "S4_Configuration\\run_bindings.csv": 42,
+    "S4_Descriptor_diagnostics\\action_coordinate_diagnostics.csv": 12,
+    "S4_Descriptor_diagnostics\\dependence_cells.csv": 134,
+    "S4_Descriptor_diagnostics\\dependence_summary.csv": 20,
+    "S4_Descriptor_diagnostics\\primary_parameters.csv": 6,
+    "S4_Descriptor_diagnostics\\reference_sensitivity.csv": 6,
+    "S4_Descriptor_diagnostics\\threshold_sensitivity.csv": 16,
+    "S4_Evaluation_banks\\evaluation_bank_summary.csv": 2,
+    "S4_Evaluation_banks\\evaluation_cases.csv": 2048,
+    "S4_Evaluation_banks\\run_bank_links.csv": 1182,
+    "S4_Source_pools\\Source_category_counts_v33.csv": 12,
+    "S4_Source_pools\\Source_quality_values_v33.csv": 4,
+    "S6_Ant_construction_and_full_exposure\\learner_settings_2655_runs.csv": 1773,
+    "S5_Ant_complete\\Statistics\\condition_summaries_295.csv": 197,
+    "S5_Ant_complete\\Statistics\\registered_contrasts_360.csv": 182,
+    "S5_Ant_complete\\Statistics\\run_endpoints_885.csv": 591,
+    "S6_Ant_construction_and_full_exposure\\Construction\\ant_normalizer_support_index_60.csv": 18,
+    "S6_Ant_construction_and_full_exposure\\Construction\\ant_registered_views_225.csv": 174,
+    "S6_Ant_construction_and_full_exposure\\Construction\\ant_run_to_view_885.csv": 591,
+    "S6_Ant_construction_and_full_exposure\\Construction\\ant_source_cohort_quality_225_views.csv": 696,
+    "S6_Ant_construction_and_full_exposure\\Construction\\ant_source_quality_with_explicit_denominators.csv": 3,
+    "S6_Ant_construction_and_full_exposure\\Exposure\\actual_sampling_paths_2655_runs.csv": 4473,
+    "S6_Ant_construction_and_full_exposure\\Exposure\\ant_frozen_control_identity_885_runs.csv": 591,
+    "S6_Ant_construction_and_full_exposure\\Exposure\\main_control_counts_1770_runs.csv": 1182
+  },
+  "method_counts": {
+    "gcsl": 117,
+    "wgcsl": 117,
+    "ddpg": 117,
+    "gofar": 522,
+    "hiql": 189,
+    "crl": 189,
+    "smore": 522
+  },
+  "ant_crl_positive": 10,
+  "source_sha256": "04a0d3253986b8b24b1a99afe3179617393b2d33e85633b1fbe3073f0b988a93"
+}
