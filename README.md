@@ -1,6 +1,8 @@
 # Current weighted-sampling revision
 
-The current revision materials are in [revision_20261118](revision_20261118/README.md): 1,773 retained run endpoints, 546 contrasts in 24 families, construction and exposure records, available validation data, configuration summaries, plotting code and an available implementation snapshot with licenses and hashes. Fixed-size resampling is excluded from the current manuscript.
+The current revision materials are in [revision_20261118](revision_20261118/README.md): 1,773 prespecified run endpoints, 546 contrasts in 24 families, construction and exposure records, available validation data, configuration summaries, plotting code and an available implementation snapshot with licenses and hashes. Fixed-size resampling is excluded from the current manuscript.
+
+[Download the complete Figure 3 source data (CSV)](https://raw.githubusercontent.com/DamySSG/trajectory-type-imbalance-offline-gcrl/747b0c15338bb950c1af0082a97b9936744fba7d/figure_data/Dose_profiles_source.csv). The 1,319 rows cover seven algorithms, three environments and all seven sampling levels, including the additional intermediate-level experiments.
 
 Read the release documentation for exact contents and reproduction requirements. Raw training buffers/checkpoints and some historical logs are not included; this release does not claim one-command retraining or byte identity of the source snapshot with every historical worker.
 
