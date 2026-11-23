@@ -1318,7 +1318,7 @@ AntMazeLarge,smore,motion_direction,5,47,1047,ant-gsm-v44-0596,registered,0.0,0.
 AntMazeLarge,smore,motion_direction,10,11,1011,ant-gsm-v44-0475,registered,0.1953125,0.29296875,-0.09765625
 AntMazeLarge,smore,motion_direction,10,29,1029,ant-gsm-v44-0499,registered,0.0,0.09765625,-0.09765625
 AntMazeLarge,smore,motion_direction,10,47,1047,ant-gsm-v44-0523,registered,0.0,0.0,0.0
-FetchPush,gcsl,goal_separation,-5.0,11,1011,supp-dose-20261111-FetchPush-gcsl-goal_separation-minus050-s11,dose extension / train,72.4609375,74.21875,-1.7578125
+FetchPush,gcsl,goal_separation,-5,11,1011,supp-dose-20261111-FetchPush-gcsl-goal_separation-minus050-s11,dose extension / train,72.4609375,74.21875,-1.7578125
 FetchPush,gcsl,goal_separation,-2.5,11,1011,supp-dose-20261111-FetchPush-gcsl-goal_separation-minus025-s11,dose extension / replay,80.95703125,74.21875,6.73828125
-FetchPush,wgcsl,goal_separation,-5.0,11,1011,supp-dose-20261111-FetchPush-wgcsl-goal_separation-minus050-s11,dose extension / replay,97.65625,96.2890625,1.3671875
-FetchPush,ddpg,goal_separation,-5.0,11,1011,supp-dose-20261111-FetchPush-ddpg-goal_separation-minus050-s11,dose extension / replay,81.0546875,55.2734375,25.78125
+FetchPush,wgcsl,goal_separation,-5,11,1011,supp-dose-20261111-FetchPush-wgcsl-goal_separation-minus050-s11,dose extension / replay,97.65625,96.2890625,1.3671875
+FetchPush,ddpg,goal_separation,-5,11,1011,supp-dose-20261111-FetchPush-ddpg-goal_separation-minus050-s11,dose extension / replay,81.0546875,55.2734375,25.78125
