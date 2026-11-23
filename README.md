@@ -12,7 +12,7 @@ GoFAR, and HER+DDPG are evaluated on the resulting datasets.
 
 ## Repository Contents
 
-- [Figure 3 source data (CSV)](https://raw.githubusercontent.com/DamySSG/trajectory-type-imbalance-offline-gcrl/ccb61430028cde5ca7624d205072e76e9e4cce14/figure_data/Dose_profiles_source.csv) — all 1,323 runs used to plot Figure 3 in the revised manuscript.
+- [Figure 3 source data (CSV)](https://raw.githubusercontent.com/DamySSG/trajectory-type-imbalance-offline-gcrl/1ac95e3ff9a2fe06b34fc4f6482e55a8a3cbe2c3/figure_data/Dose_profiles_source.csv) — all 1,323 runs used to plot Figure 3 in the revised manuscript.
 - `scripts/data/`: executable subtype definitions, ratio interventions, dataset builders, and validation.
 - `train.py`, `rl_modules/`, `her_modules/`, `mpi_utils/`: GoFAR-derived offline GCRL training code.
 - `scripts/run_experiments.py`: the 532-condition matrix represented in the cleaned manuscript results.
