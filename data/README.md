@@ -1,20 +1,10 @@
-# Offline Data
+# Offline buffers for FetchPush and PointMaze
 
-Raw trajectory buffers are distributed separately and are ignored by Git.
+This page documents inputs to the original two-environment code. The revised study also includes AntMaze. Its [data and code guide](../revision_20261118/README.md) links the public results, source summaries and construction records.
 
 ## Provenance
 
-For each environment, the expert pool was collected by evaluating a pretrained
-HER+DDPG agent for 10,000 episodes. The agent was trained for 1,000 epochs with
-the official GoFAR implementation and its original hyperparameter settings.
-The random pool contains 10,000 evaluation episodes collected by applying
-uniformly sampled random actions in the same environment. This procedure was
-used independently for FetchPush-v1 and PointMaze-Medium-v3.
-
-During offline learning, the expert and random sources are sampled at equal
-episode quotas and shuffled, yielding the 50% expert and 50% random mixture
-reported in the manuscript. Source labels are used only to construct that
-mixture and are not supplied as policy inputs.
+For FetchPush and PointMaze, each environment has 10,000 expert-source episodes and 10,000 random-action episodes. Collection records describe a DDPG-HER collector trained for 1,000 epochs with GoFAR-derived code. Its checkpoint and full training configuration are unavailable. The [public source summaries](../revision_20261118/S4_Source_pools.zip) give the measured outcomes. The source labels identify the policy that collected each trajectory.
 
 ## Expected Pickle Schema
 
@@ -40,6 +30,4 @@ data/raw/pointmaze/expert.pkl
 data/raw/pointmaze/random.pkl
 ```
 
-The long-term archive URL or reviewer-only Drive URL should be recorded here
-before external distribution. No URL is currently embedded because the data
-have not yet been deposited.
+The raw offline buffers are not included in this repository.

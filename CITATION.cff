@@ -7,13 +7,16 @@ authors:
     given-names: Minjun
 repository-code: "https://github.com/DamySSG/trajectory-type-imbalance-offline-gcrl"
 license: MIT
-version: 1.0.0
-date-released: 2026-09-08
 preferred-citation:
-  type: article
+  type: unpublished
   title: "Trajectory-Type Imbalance in Offline Goal-Conditioned Reinforcement Learning: A Controlled Dataset Analysis"
   authors:
     - family-names: Dai
       given-names: Minjun
-  journal: "Knowledge-Based Systems"
-  notes: "Manuscript under review; update bibliographic details after publication."
+    - family-names: Kuts
+      given-names: Vladimir
+    - family-names: Lee
+      given-names: Brian
+    - family-names: Qiao
+      given-names: Yuansong
+  notes: "Manuscript submitted to Applied Intelligence."

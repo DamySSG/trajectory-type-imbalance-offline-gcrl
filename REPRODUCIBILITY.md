@@ -1,4 +1,6 @@
-# Reproducibility Guide
+# Reproducibility guide for the original two-environment experiments
+
+For the revised three-environment study, including Figure 3 and the independent ten-seed FetchPush experiment in Table 4, start with the [weighted-sampling reproduction guide](revision_20261118/README.md). The instructions below cover the original four-algorithm experiment matrix.
 
 ## 1. Software Environment
 
@@ -20,8 +22,7 @@ training. Plot and dataset-construction tests do not require a GPU.
 
 ## 2. External Offline Buffers
 
-Place the four source files as follows after obtaining the separately
-distributed data archive:
+To use these builders with the original offline buffers, place the four input files as follows:
 
 ```text
 data/raw/
@@ -33,9 +34,7 @@ data/raw/
     `-- random.pkl
 ```
 
-The archive location is intentionally not hard-coded in this repository. Add
-the persistent repository or reviewer-only download URL to `data/README.md`
-before distributing the review package.
+See the [data description](data/README.md) for the schema and public source summaries.
 
 ## 3. Construct Dataset Variants
 
